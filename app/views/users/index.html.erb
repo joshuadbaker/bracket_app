@@ -1,0 +1,5 @@
+<%= @responses.each do |place| %>
+<a href=<%= place.url%>><li><%= place.name %></li></a>
+<li><%= place.rating %></li>
+<li><%= place.snippet_text %></li>
+<% end %>
