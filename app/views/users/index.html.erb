@@ -1,5 +1,8 @@
-<%= @responses.each do |place| %>
-<a href=<%= place.url%>><li><%= place.name %></li></a>
-<li><%= place.rating %></li>
-<li><%= place.snippet_text %></li>
-<% end %>
+<div class="index">
+  <div id="search_box">
+    <%= form_for @user, url: {action: "create"} do |f| %>
+    <%= f.text_field :address%>
+    <%= f.submit "See Where To Go" %>
+    <% end %> 
+  </div>
+</div>

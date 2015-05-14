@@ -1,0 +1,15 @@
+<h3>Places to go!</h3>
+<% @yelp_responses.each do |place|%>
+<li><%= place.name %></li>
+<li><%= place.rating %></li>
+<% end %>
+
+<h3>Places to avoid!</h3>
+<% @nyc_responces.each do |place|%>
+<% binding.pry %>
+<li><%= place["dba"] %></li>
+<li><%= place["grade"] %></li>
+<li><%= place["violation_description"] %></li><br>
+<% end %>
+
+</div>
