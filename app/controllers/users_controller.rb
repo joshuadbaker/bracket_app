@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     yelp = YelpApi.new
     params = {
-      category_filter: "jazzandblues", 
+      category_filter: "bars", 
       category_filter: "restaurants",
       radius_filter: 500
     }
