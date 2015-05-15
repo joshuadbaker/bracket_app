@@ -4,17 +4,14 @@
 <li><%= place.rating %></li>
 <% end %>
 
-<h3>Places to avoid!</h3>
-<% @nyc_responces.each do |place|%>
-  <% if place["violation_code"] == "08A" %>
-    <li><%= place["dba"] %></li>
-  <li><%= place["violation_description"] %></li>
-  <% end %> 
-
-<br>
-
-
-
+<% @restaurants.each do |place|%>
+<li><%= place.name %></li>
+<li><%= place.violations %></li>
+<li><%= place.violation_descriptions %></li>
 <% end %>
+
+
+
+
 
 </div>

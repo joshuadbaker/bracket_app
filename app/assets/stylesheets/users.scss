@@ -6,9 +6,9 @@
 screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, hue, saturation, color, and luminosity. And also normal which reset it.*/
 .index {
   background-image: url(burger_2.jpg);
-  background-size: 40px 35px;
-  background-color: purple;
-  background-blend-mode: exclusion;
+  background-size: 70px 55px;
+  background-color: tomato;
+  background-blend-mode: color-dodge;
   background-repeat: repeat;
   position:fixed;
   width:100%;

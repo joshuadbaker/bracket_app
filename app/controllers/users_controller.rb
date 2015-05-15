@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end 
 
   def create
+    @stuff = params
     location = params[:user][:address]
     yelp = YelpApi.new
     params = {
@@ -23,6 +24,19 @@ class UsersController < ApplicationController
     response = yelp.client.search(location, params)
     @yelp_responses = response.businesses 
     @nyc_responces = HTTParty.get(nyc_api+bad+"&"+zipcode)
+
+    @nyc_responces.each do |place|
+      restaurant = Restaurant.find_by name: place["dba"]
+      if restaurant && restaurant[:violations] && restaurant[:violations].exclude?(place["violation_code"])  && restaurant[:violation_descriptions] && restaurant[:violation_descriptions].exclude?(place["violation_description"])
+              restaurant[:violations] << place["violation_code"]
+              restaurant[:violation_descriptions] << place["violation_description"]
+              restaurant.save
+      elsif place["violation_description"] && place["violation_code"] && !Restaurant.find_by(name: place["dba"])
+              Restaurant.create(:name => place["dba"], :zipcode => place["zipcode"], :violations => [place["violation_code"]], :violation_descriptions => [place["violation_description"]])
+      end 
+    end 
+
+    @restaurants = Restaurant.where(zipcode: location)
 
   end  
 
