@@ -6,10 +6,15 @@
 
 <h3>Places to avoid!</h3>
 <% @nyc_responces.each do |place|%>
-<% binding.pry %>
-<li><%= place["dba"] %></li>
-<li><%= place["grade"] %></li>
-<li><%= place["violation_description"] %></li><br>
+  <% if place["violation_code"] == "08A" %>
+    <li><%= place["dba"] %></li>
+  <li><%= place["violation_description"] %></li>
+  <% end %> 
+
+<br>
+
+
+
 <% end %>
 
 </div>

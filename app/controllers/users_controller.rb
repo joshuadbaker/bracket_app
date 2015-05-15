@@ -24,6 +24,6 @@ class UsersController < ApplicationController
     @yelp_responses = response.businesses 
     @nyc_responces = HTTParty.get(nyc_api+bad+"&"+zipcode)
 
-  end 
+  end  
 
 end

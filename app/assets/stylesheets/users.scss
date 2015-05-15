@@ -33,46 +33,22 @@ input {
   color: #555
 }
 
+input.error, textarea.error {
+ border: 5px solid red;
+}
+
+h3.error {
+ color: red;
+ width: 300px;
+ font-weight: 2.0;
+ border: 2px solid red;
+ background-color: #fff;
+ text-align: center;
+}
+
 /******************
-Bracket
+Results
 ******************/
 
-.bracket {
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0px;
-  left:0px;
-}
 
-td {
-  min-width: 100px;
-  height: 50px;
-  border-bottom: 3px solid black;
-
-}
-
-.tile {
-  display: inline-block;
-  border: 3px solid red;
-  height: 17.5%;
-  width: 17.5%;
-  margin: 0;
-  padding: 0;
-}
-
-.fill {
-  background-color: black
-}
-
-.tile p {
-  position: absolute;
-}
-
-.jSlots-wrapper {  
-    overflow: hidden; /* to hide the magic */  
-    height: 20px; /* whatever the height of your list items are */  
-    display: inline-block; /* to size width correctly, can use float too, or width*/  
-    border: 1px solid #999;  
-}  
 
