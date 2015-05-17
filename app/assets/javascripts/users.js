@@ -26,8 +26,14 @@ $(document).ready(function(){
   });
 
 $('.bad_results').click(function(){
-  $(this).children('.violation_description').toggle("fast");
-  $(this).children('.icon').toggle("fast");
+  $(this).children('.violation_description').toggle(500);
+  $(this).children('.icon').toggle(500);
+})
+
+$('.good_results').click(function(){
+  $(this).children('.snippet').toggle(500);
+  $(this).children('.type').toggle(500);
+  $(this).children('.yelp_link').toggle(500);
 })
 
 })

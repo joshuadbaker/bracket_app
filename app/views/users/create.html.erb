@@ -7,6 +7,9 @@
     <% @yelp_responses.each_with_index do |place, index| %>
     <div id='Gtile_<%= index %>' class="good_results">
       <li class="good_name"><%= place.name%></li><img class="Gimg" src=<%=place.rating_img_url%>>
+      <li class="type"><%= place.categories[0][0] %></li>
+      <li class="snippet"><%= '"'+place.snippet_text+'"' %></li>
+      <a class="yelp_link" href=<%= place.url %> target="_blank">See More...</a>
     </div>
     <% end %>
   </div>
