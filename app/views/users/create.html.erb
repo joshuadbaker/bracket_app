@@ -1,29 +1,47 @@
 
 <div class="container-fluid">
   <div class="col-md-6">
-    <div class="row page-header">
-      <h1>Cheap, Fast, Eats!</h1>
+    <div id="good" class="row page-header">
+      <img class="header_img" src="http://oi62.tinypic.com/2il1mxf.jpg">
     </div>
-    <table class="table table-striped table-hover ">
-      <thead>
-        <tr>
-          <th>Review Count</th>
-          <th>Restaurant</th>
-          <th>Rating</th>
-          <th>Review</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= @responses.each do |place| %>
-        <tr>
-          <td><%= place.review_count %></td>
-          <td><a href=<%= place.mobile_url %>><%= place.name %></a></td>
-          <td><%= place.rating %></td>
-          <td><%= place.snippet_text %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <% @yelp_responses.each_with_index do |place, index| %>
+    <div id='Gtile_<%= index %>' class="good_results">
+      <li class="good_name"><%= place.name%></li><img class="Gimg" src=<%=place.rating_img_url%>>
+    </div>
+    <% end %>
+  </div>
+  <div id="grey" class="col-md-6">
+    <div id="bad" class="row page-header">
+      <img class="header_img" src="http://oi59.tinypic.com/2h87m95.jpg">
+    </div>
+    <% @restaurants.each_with_index do |place, index| %>
+    <div id='Btile_<%= index %>' class="bad_results">
+    <li class="bad_name"><%= place.name %></li><p class="grade">C</p>   
+    
+    <% place.violations.each do |offense| %>
+    <% roach = ["04M"]%>
+    <% mouse = ["04L"]%>
+    <% hands = ["04C"]%>
+    <% fish = ["02H"]%>
+    <% fly = ["04N"]%>
+      <% if roach.include?(offense) %>
+        <img class="icon" src="http://oi58.tinypic.com/1250x7d.jpg">
+      <% elsif mouse.include?(offense) %>
+        <img class="icon" src="http://oi57.tinypic.com/2ueqkow.jpg">
+      <% elsif hands.include?(offense) %>
+        <img class="icon" src="http://oi61.tinypic.com/2z6z7a0.jpg">
+      <% elsif fish.include?(offense) %>
+        <img class="icon" src="http://oi61.tinypic.com/23uc2o7.jpg">
+      <% elsif fly.include?(offense) %>
+        <img class="icon" src="http://oi61.tinypic.com/2epnb52.jpg">
+      <% end %>
+
+    <% end %>
+    <img class="icon" src="http://oi62.tinypic.com/214pjdk.jpg">
+    <% place.violation_descriptions.each do |violation| %>
+      <li class="violation_description"><div class="violation_img"></div><%= violation %></li>
+    <% end %>
+    </div>
+    <% end %>
   </div>
 </div>
-

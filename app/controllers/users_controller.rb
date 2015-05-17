@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     zipcode = "zipcode="+location
 
     response = yelp.client.search(location, params)
-    @yelp_responses = response.businesses 
+    @yelp_responses = response.businesses
     @nyc_responces = HTTParty.get(nyc_api+bad+"&"+zipcode)
 
     @nyc_responces.each do |place|
@@ -37,7 +37,6 @@ class UsersController < ApplicationController
     end 
 
     @restaurants = Restaurant.where(zipcode: location)
-
   end  
 
 end

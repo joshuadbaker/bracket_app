@@ -15,3 +15,14 @@
   :restaurant_id
   :count
 
+  imgs:
+  trash - http://oi62.tinypic.com/214pjdk.jpg
+  mouse - http://oi57.tinypic.com/2ueqkow.jpg
+  sad - http://oi59.tinypic.com/2h87m95.jpg
+  hands - http://oi61.tinypic.com/2z6z7a0.jpg
+  happy - http://oi62.tinypic.com/2il1mxf.jpg
+  fly - http://oi61.tinypic.com/2epnb52.jpg
+  cockroach - http://oi58.tinypic.com/1250x7d.jpg
+  stinkfish - http://oi61.tinypic.com/23uc2o7.jpg
+  arrow - http://oi59.tinypic.com/sq1fu0.jpg
+
