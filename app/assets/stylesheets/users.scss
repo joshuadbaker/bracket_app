@@ -107,8 +107,14 @@ h3.error {
 Results
 ******************/
 
+div.container-fluid {
+  height: 100vh;
+  width: 100%;
+
+}
+
 div.col-md-6 {
-  max-height: 900px;
+  max-height: 100%;
   overflow: scroll;
 
 }
@@ -187,10 +193,38 @@ div.col-md-6 {
   font-weight: 600;
 }
 
+/*icons*/
+
+img#hands {
+  height: 35px;
+  width: 35px;
+}
+
+img#roach {
+  -webkit-transform: rotate(90deg);
+  height: 45px;
+}
+
+img#fly {
+  -webkit-transform: rotate(90deg);
+  height: 35px;
+}
+
+img#trash {
+  height: 30px;
+}
+
+img#fish {
+  height: 35px;
+}
+
 img.icon {
   height: 50px;
   display: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
+
 
 .bad_name:hover {
   color: #999;

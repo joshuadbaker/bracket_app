@@ -28,19 +28,19 @@
     <% fish = ["02H"]%>
     <% fly = ["04N"]%>
       <% if roach.include?(offense) %>
-        <img class="icon" src="http://oi58.tinypic.com/1250x7d.jpg">
+        <img class="icon" id="roach" src="http://oi58.tinypic.com/1250x7d.jpg">
       <% elsif mouse.include?(offense) %>
-        <img class="icon" src="http://oi57.tinypic.com/2ueqkow.jpg">
+        <img class="icon" id="mouse" src="http://oi57.tinypic.com/2ueqkow.jpg">
       <% elsif hands.include?(offense) %>
-        <img class="icon" src="http://oi61.tinypic.com/2z6z7a0.jpg">
+        <img class="icon" id="hands" src="http://oi61.tinypic.com/2z6z7a0.jpg">
       <% elsif fish.include?(offense) %>
-        <img class="icon" src="http://oi61.tinypic.com/23uc2o7.jpg">
+        <img class="icon" id="fish" src="http://oi61.tinypic.com/23uc2o7.jpg">
       <% elsif fly.include?(offense) %>
-        <img class="icon" src="http://oi61.tinypic.com/2epnb52.jpg">
+        <img class="icon" id="fly" src="http://oi61.tinypic.com/2epnb52.jpg">
       <% end %>
 
     <% end %>
-    <img class="icon" src="http://oi62.tinypic.com/214pjdk.jpg">
+    <img class="icon" id="trash" src="http://oi62.tinypic.com/214pjdk.jpg">
     <% place.violation_descriptions.each do |violation| %>
       <li class="violation_description"><div class="violation_img"></div><%= violation %></li>
     <% end %>

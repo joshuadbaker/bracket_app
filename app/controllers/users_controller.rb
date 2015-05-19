@@ -10,19 +10,22 @@ class UsersController < ApplicationController
   end 
 
   def create
-    @stuff = params
+
     location = params[:user][:address]
     yelp = YelpApi.new
     params = {
-      sort: 2
+      sort: 2,
+      category_filter: 'restaurants'
     }
+
+    response = yelp.client.search(location, params)
+    @yelp_responses = response.businesses
+
     nyc_api = "https://data.cityofnewyork.us/resource/xx67-kt59.json"
     good = "?grade=a"
     bad = "?grade=c"
     zipcode = "zipcode="+location
 
-    response = yelp.client.search(location, params)
-    @yelp_responses = response.businesses
     @nyc_responces = HTTParty.get(nyc_api+bad+"&"+zipcode)
 
     @nyc_responces.each do |place|
